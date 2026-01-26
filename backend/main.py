@@ -5,11 +5,9 @@ from pydantic import BaseModel
 import os
 import json
 from pathlib import Path
-from dotenv import load_dotenv
-import google.generativeai as genai
+from dotenv import load_dotenv; load_dotenv()
+import requests
 
-# Load environment variables
-load_dotenv()
 
 app = FastAPI()
 
@@ -23,11 +21,10 @@ app.add_middleware(
 )
 
 # Configure Gemini API
-api_key = os.getenv("GEMINI_API_KEY")
+api_key = os.getenv("API_KEY")
 if not api_key:
-    raise ValueError("GEMINI_API_KEY not found in .env file")
+    raise ValueError("API_KEY not found in .env file")
 
-genai.configure(api_key=api_key)
 
 
 class ContentCreatorInput(BaseModel):
@@ -49,7 +46,7 @@ Primary Platform: {user_input.platform}
 Target Audience: {user_input.target_audience}
 Content Style Preference: {user_input.content_style}
 
-Please provide your response in the following JSON format (and ONLY this format):
+Please provide your response in the following JSON format (and ONLY this format MUST):
 {{
     "trending_topics": [
         {{
@@ -103,23 +100,34 @@ Please provide your response in the following JSON format (and ONLY this format)
 }}
 
 Ensure all data is realistic, current, and actionable. Base recommendations on actual trends in the {user_input.niche} niche."""
-
-    model = genai.GenerativeModel("gemini-pro")
     
     try:
-        response = model.generate_content(prompt)
-        response_text = response.text
-        
-        # Extract JSON from response
-        start_idx = response_text.find('{')
-        end_idx = response_text.rfind('}') + 1
-        
-        if start_idx != -1 and end_idx > start_idx:
-            json_str = response_text[start_idx:end_idx]
-            trend_data = json.loads(json_str)
+        response = requests.post(
+            url="https://openrouter.ai/api/v1/chat/completions",
+            headers={
+            "Authorization": f"Bearer {api_key}",
+        },
+        data=json.dumps(
+            {
+            "messages": [
+            {
+                "role": "content creator", # The model's role
+                "content": f"{prompt}"
+            }
+            ]}
+            )
+        )
+        if response.status_code < 300:
+            trend_data = response.json()["choices"][0]["message"]["content"]
         else:
-            raise ValueError("Could not extract JSON from response")
-        
+            raise Exception(f"The request was not successfull with status {response.status_code}")
+
+        try:
+            temp = json.dumps(trend_data, indent=4)
+            ptemp = Path('') / 'tests' / 'test2.json'
+            ptemp.write_text(temp)
+        except Exception:
+            print(temp)
         return trend_data
     
     except json.JSONDecodeError as e:
@@ -133,6 +141,7 @@ Ensure all data is realistic, current, and actionable. Base recommendations on a
             detail=f"Error generating trends: {str(e)}"
         )
 
+
 p = Path(__file__).absolute().parent.parent / 'frontend'
 
 @app.get("/")
@@ -140,6 +149,12 @@ async def get_main_page():
     """Serve the main page"""
     return FileResponse(p / "index.html", media_type="text/html")
 
+@app.get('/script.js')
+def wow():
+    return FileResponse(p / "script.js")
+@app.get('/styles.css')
+def wow():
+    return FileResponse(p / "styles.css")
 
 @app.post("/api/analyze")
 async def analyze_trends(user_input: ContentCreatorInput):

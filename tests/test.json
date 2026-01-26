@@ -1,0 +1,49 @@
+{
+    "id": "gen-1769442142-ytIF1Hsr00l0ETmacsEP",
+    "provider": "ModelRun",
+    "model": "deepseek/deepseek-r1-0528:free",
+    "object": "chat.completion",
+    "created": 1769442142,
+    "choices": [
+        {
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "index": 0,
+            "message": {
+                "role": "assistant",
+                "content": "Hello! \ud83d\ude0a It looks like you sent just a question mark \u2014 did you need help with something?  \nLet me know what's on your mind \u2014 I'm here to:\n\n- Answer questions \ud83d\udd0d  \n- Explain anything confusing \ud83d\udcda  \n- Help brainstorm ideas \ud83d\udca1  \n- Or just chat! \ud83d\udcac  \n\nWhat can I do for you today?",
+                "refusal": null,
+                "reasoning": "Hmm, the user just sent \"?\". That's interesting. A single questionWN mark - could mean anything. \n\nFirst reaction: is this a test? Maybe user is checking if I'm alive. Or perhaps they're new to chatting with AIs and testing how it works. \n\nAlternative theory: could be accidental keypress. Mobile keyboards are notorious for sending fragments. But I shouldn't dismiss it - even accidental inputs deserve acknowledgment. \n\nScanning context: no prior conversation history. Totally cold start. User appears anonymously on the platform. Zero clues about demographics or intent. \n\nPotential scenarios:\n- Genuine curiosity \"how does this work?\"\n- Tech-hesitant person dipping toes in\n- Someone frustrated looking for help but unsure how to start\n- Non-native speaker practicing English minimally\n\nApproach strategy:\nPlay warm yet open-ended. Invite elaboration without pressure. Offer starting points as conversation catalysts. \n\nKey goal: Make user feel safe to reveal their actual need. The punctuation-only user is often the most uncertain. \n\nEmbedded message in reply: \"It's okay, take your time. I'm willing to meet you where you are.\" That's why including smile and multiple conversation starters. \n\nNoticing my own micro-decision: avoided formal \"Greetings\" - \"Hi there\" feels more approachable for this context. The emoji is calculated sincerity.\n",
+                "reasoning_details": [
+                    {
+                        "format": null,
+                        "index": 0,
+                        "type": "reasoning.text",
+                        "text": "Hmm, the user just sent \"?\". That's interesting. A single questionWN mark - could mean anything. \n\nFirst reaction: is this a test? Maybe user is checking if I'm alive. Or perhaps they're new to chatting with AIs and testing how it works. \n\nAlternative theory: could be accidental keypress. Mobile keyboards are notorious for sending fragments. But I shouldn't dismiss it - even accidental inputs deserve acknowledgment. \n\nScanning context: no prior conversation history. Totally cold start. User appears anonymously on the platform. Zero clues about demographics or intent. \n\nPotential scenarios:\n- Genuine curiosity \"how does this work?\"\n- Tech-hesitant person dipping toes in\n- Someone frustrated looking for help but unsure how to start\n- Non-native speaker practicing English minimally\n\nApproach strategy:\nPlay warm yet open-ended. Invite elaboration without pressure. Offer starting points as conversation catalysts. \n\nKey goal: Make user feel safe to reveal their actual need. The punctuation-only user is often the most uncertain. \n\nEmbedded message in reply: \"It's okay, take your time. I'm willing to meet you where you are.\" That's why including smile and multiple conversation starters. \n\nNoticing my own micro-decision: avoided formal \"Greetings\" - \"Hi there\" feels more approachable for this context. The emoji is calculated sincerity.\n"
+                    }
+                ]
+            }
+        }
+    ],
+    "usage": {
+        "prompt_tokens": 5,
+        "completion_tokens": 355,
+        "total_tokens": 360,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+            "cached_tokens": 2,
+            "audio_tokens": 0
+        },
+        "cost_details": {
+            "upstream_inference_cost": 0,
+            "upstream_inference_prompt_cost": 0,
+            "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+            "reasoning_tokens": 354,
+            "audio_tokens": 0
+        }
+    }
+}

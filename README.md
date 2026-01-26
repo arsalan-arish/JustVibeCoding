@@ -2,6 +2,11 @@
 
 A modern web application that helps content creators discover trending topics, templates, and analytics for their niche using AI-powered analysis powered by Google Gemini.
 
+Rn there is problem in script.js maybe but it is confirm that as seen in the response
+by the model in test.json, the request sent is somehow only sending a question mark (?)
+Also the response is not being parsed correctly, only the 'content' key's value should be
+parsed
+
 ## 🌟 Features
 
 - **Trending Topics Analysis**: Get real-time trending topics in your niche with growth metrics

@@ -133,11 +133,12 @@ Ensure all data is realistic, current, and actionable. Base recommendations on a
             detail=f"Error generating trends: {str(e)}"
         )
 
+p = Path(__file__).absolute().parent.parent / 'frontend'
 
 @app.get("/")
 async def get_main_page():
     """Serve the main page"""
-    return FileResponse("../frontend/index.html", media_type="text/html")
+    return FileResponse(p / "index.html", media_type="text/html")
 
 
 @app.post("/api/analyze")
@@ -150,7 +151,7 @@ async def analyze_trends(user_input: ContentCreatorInput):
 @app.get("/results")
 async def get_results_page():
     """Serve the results/analytics page"""
-    return FileResponse("../frontend/results.html", media_type="text/html")
+    return FileResponse(p / "results.html", media_type="text/html")
 
 
 @app.get("/api/health")

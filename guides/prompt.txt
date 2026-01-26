@@ -1,0 +1,18 @@
+I want to create a small webapp
+A user (content creator) will come to the app and give some details like his niche, etc
+The app is supposed to show him real analytics of trends in the niche and templates for him to create short form content
+
+The idea is that there will be 2 pages 
+One will be the main page that is like a homepage where all the details will be collected as well
+The other will be the analytics page where all the results are displayed
+
+Both pages will be written in HTML, CSS, JS frontend
+The backend will be fastapi based routes to for example the root for the main page and a /results path for the analytics and results page
+
+The mechanism will be that there will be an .env file for the api key 
+The results will be requested from that api key LLM service provider, for example gemini in this case
+The request will include a highly sophisticated prompt fully engineered to make gemini search for real trends and returning the right data
+
+This will be the goto platform for content creators to get analytics of real trends and some templates for their short form content
+
+Go forward and code it. You are an experienced software engineer

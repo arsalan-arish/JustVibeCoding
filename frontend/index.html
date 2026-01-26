@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrendMaster - Content Analytics Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h1>📊 TrendMaster</h1>
+                <p class="tagline">Real Analytics for Content Creators</p>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <main class="main-content">
+            <section class="hero">
+                <h1 class="hero-title">Discover Trending Topics in Your Niche</h1>
+                <p class="hero-subtitle">Get AI-powered analytics, content templates, and growth strategies for your short-form content</p>
+            </section>
+
+            <section class="input-section">
+                <div class="form-card">
+                    <h2>Tell Us About Your Content</h2>
+                    
+                    <form id="analysisForm" class="analysis-form">
+                        <div class="form-group">
+                            <label for="niche">
+                                <span class="label-icon">🎯</span>
+                                Your Content Niche
+                            </label>
+                            <input 
+                                type="text" 
+                                id="niche" 
+                                name="niche" 
+                                placeholder="e.g., Fitness, Personal Finance, Travel, Tech, Beauty"
+                                required
+                            >
+                            <small>What's your main content category?</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="platform">
+                                <span class="label-icon">📱</span>
+                                Primary Platform
+                            </label>
+                            <select id="platform" name="platform" required>
+                                <option value="">Select a platform</option>
+                                <option value="TikTok">TikTok</option>
+                                <option value="Instagram Reels">Instagram Reels</option>
+                                <option value="YouTube Shorts">YouTube Shorts</option>
+                                <option value="Twitter/X">Twitter/X</option>
+                                <option value="LinkedIn">LinkedIn</option>
+                                <option value="Snapchat">Snapchat</option>
+                                <option value="Multiple">Multiple Platforms</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="target_audience">
+                                <span class="label-icon">👥</span>
+                                Target Audience
+                            </label>
+                            <input 
+                                type="text" 
+                                id="target_audience" 
+                                name="target_audience" 
+                                placeholder="e.g., Age 18-35, Fitness enthusiasts, Tech startups"
+                                required
+                            >
+                            <small>Who are you creating content for?</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="content_style">
+                                <span class="label-icon">✨</span>
+                                Content Style Preference
+                            </label>
+                            <input 
+                                type="text" 
+                                id="content_style" 
+                                name="content_style" 
+                                placeholder="e.g., Educational, Entertainment, Motivational, How-to, Reviews"
+                                required
+                            >
+                            <small>What's your preferred content style?</small>
+                        </div>
+
+                        <button type="submit" class="btn-primary" id="submitBtn">
+                            <span class="btn-text">Analyze Now</span>
+                            <span class="btn-loader hidden"></span>
+                        </button>
+                    </form>
+
+                    <div id="errorMessage" class="error-message hidden"></div>
+                </div>
+            </section>
+
+            <section class="features">
+                <h2>What You'll Get</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🔥</div>
+                        <h3>Trending Topics</h3>
+                        <p>Real-time trending topics relevant to your niche with growth metrics</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">#️⃣</div>
+                        <h3>Hashtag Strategy</h3>
+                        <p>Optimized hashtag recommendations with reach predictions</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📋</div>
+                        <h3>Content Templates</h3>
+                        <p>Ready-to-use content formats with proven engagement tactics</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⏰</div>
+                        <h3>Best Posting Times</h3>
+                        <p>Data-driven recommendations for maximum engagement</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎬</div>
+                        <h3>Content Calendar</h3>
+                        <p>Strategic content planning suggestions for the next 30 days</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎯</div>
+                        <h3>Competitor Insights</h3>
+                        <p>Analyze top performers and discover untapped opportunities</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 TrendMaster. Empowering content creators with data-driven insights.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

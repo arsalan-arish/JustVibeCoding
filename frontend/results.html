@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics Results - TrendMaster</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-content">
+                <div class="logo">
+                    <h1>📊 TrendMaster</h1>
+                </div>
+                <a href="/" class="btn-secondary">← Back to Home</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <main class="results-content">
+            <div id="loadingState" class="loading-state">
+                <div class="spinner"></div>
+                <p>Loading your analytics...</p>
+            </div>
+
+            <div id="resultsState" class="hidden">
+                <div class="results-header">
+                    <h1>Your Trend Analysis Results</h1>
+                    <p id="analysisDate"></p>
+                </div>
+
+                <!-- Trending Topics Section -->
+                <section class="results-section">
+                    <h2>🔥 Trending Topics in Your Niche</h2>
+                    <div id="trendingTopics" class="topics-grid">
+                        <!-- Dynamically populated -->
+                    </div>
+                </section>
+
+                <!-- Hashtag Strategy Section -->
+                <section class="results-section">
+                    <h2>#️⃣ Hashtag Strategy</h2>
+                    <div id="hashtagStrategy" class="hashtags-container">
+                        <!-- Dynamically populated -->
+                    </div>
+                </section>
+
+                <!-- Content Templates Section -->
+                <section class="results-section">
+                    <h2>📋 Content Templates</h2>
+                    <div id="contentTemplates" class="templates-grid">
+                        <!-- Dynamically populated -->
+                    </div>
+                </section>
+
+                <!-- Posting Times Section -->
+                <section class="results-section">
+                    <h2>⏰ Best Posting Times</h2>
+                    <div id="postingTimes" class="times-grid">
+                        <!-- Dynamically populated -->
+                    </div>
+                </section>
+
+                <!-- Content Calendar Section -->
+                <section class="results-section">
+                    <h2>📅 30-Day Content Calendar Suggestions</h2>
+                    <div id="contentCalendar" class="calendar-suggestions">
+                        <!-- Dynamically populated -->
+                    </div>
+                </section>
+
+                <!-- Competitor Insights Section -->
+                <section class="results-section">
+                    <h2>🎯 Competitor Insights</h2>
+                    <div id="competitorInsights" class="insights-container">
+                        <!-- Dynamically populated -->
+                    </div>
+                </section>
+
+                <!-- Tools Section -->
+                <section class="results-section">
+                    <h2>🛠️ Recommended Tools & Resources</h2>
+                    <div id="toolsResources" class="tools-grid">
+                        <!-- Dynamically populated -->
+                    </div>
+                </section>
+
+                <div class="action-buttons">
+                    <a href="/" class="btn-primary">← New Analysis</a>
+                    <button id="downloadBtn" class="btn-secondary">📥 Download Report</button>
+                </div>
+            </div>
+
+            <div id="errorState" class="error-state hidden">
+                <div class="error-icon">⚠️</div>
+                <h2>Oops! Something went wrong</h2>
+                <p id="errorMessage"></p>
+                <a href="/" class="btn-primary">← Start Over</a>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 TrendMaster. Empowering content creators with data-driven insights.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

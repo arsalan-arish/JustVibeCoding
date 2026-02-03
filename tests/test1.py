@@ -1,5 +1,5 @@
-from dotenv import load_dotenv; load_dotenv(); import os; api_key = os.getenv('API_KEY')
-import requests; import json
+from dotenv import load_dotenv; load_dotenv(); import os; api_key = os.getenv('DEEP_API_KEY')
+import json
 from openai import OpenAI
 
 prompt = """You are an expert content strategist and trend analyst specializing in short-form content creation.
@@ -68,22 +68,20 @@ Ensure all data is realistic, current, and actionable. Base recommendations on a
 
 
 
-
 client = OpenAI(
-  base_url="https://openrouter.ai/api/v1",
+  base_url="https://api.deepseek.com/v1",
   api_key=api_key,
 )
 
 completion = client.chat.completions.create(
-  extra_headers={},
-  model="deepseek-r1:free",
+  model="deepseek-chat",
   messages=[
-    {
-      "role": "user",
-      "content": prompt
-    }
-  ]
+        {"role": "system", "content": "You are a helpful assistant"},
+        {"role": "user", "content": prompt},
+    ],
+    stream=False
 )
+
 print(completion)
 print(completion.choices)
 print(completion.choices[0])
